@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triangle Monitor — Crypto.com Pattern Scanner</title>
+<link rel="stylesheet" href="/static/styles.css">
+<script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+<div id="flash-overlay" class="hidden">
+  <div id="flash-box">
+    <div id="flash-kind"></div>
+    <div id="flash-pair"></div>
+    <div id="flash-detail"></div>
+    <button id="flash-dismiss">DISMISS</button>
+  </div>
+</div>
+
+<header>
+  <div class="brand">
+    <h1>◢ Triangle Monitor</h1>
+    <span class="sub">Crypto.com · paper-signal scanner</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="k">Universe</span><span class="v" id="stat-universe">–</span></div>
+    <div class="stat"><span class="k">Active patterns</span><span class="v" id="stat-patterns">–</span></div>
+    <div class="stat"><span class="k">Breakouts</span><span class="v" id="stat-breakouts">–</span></div>
+    <div class="stat"><span class="k">Updated</span><span class="v" id="stat-updated">–</span></div>
+  </div>
+  <div class="jurisdiction" title="Per-token California availability can't be confirmed from the public API — verify in the Crypto.com app. Add unavailable tokens to config/jurisdiction.yaml.">
+    📍 California, US
+  </div>
+</header>
+
+<div id="universe-events" class="hidden"></div>
+
+<nav id="filters">
+  <button data-f="all" class="active">All</button>
+  <button data-f="breakout">⚡ Breakouts</button>
+  <button data-f="descending_triangle">Descending △</button>
+  <button data-f="ascending_triangle">Ascending △</button>
+  <button data-f="symmetrical_triangle">Symmetrical △</button>
+  <button data-f="flag">Flags</button>
+  <button data-f="double">Doubles</button>
+</nav>
+
+<main>
+  <section id="cards"></section>
+  <aside id="feed">
+    <h3>Signal feed</h3>
+    <div id="events"></div>
+  </aside>
+</main>
+
+<div id="detail" class="hidden">
+  <div id="detail-head">
+    <h2 id="detail-title"></h2>
+    <div id="detail-badges"></div>
+    <button id="detail-close">✕</button>
+  </div>
+  <div id="chart"></div>
+  <div id="detail-meta"></div>
+</div>
+
+<footer>
+  Read-only monitor — no orders are placed. Signals are paper-trade alerts, not financial advice.
+  Universe refreshes automatically: delisted assets are removed, new listings are added.
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

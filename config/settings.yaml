@@ -1,0 +1,23 @@
+# Triangle Monitor settings
+universe:
+  refresh_minutes: 10          # how often to re-poll the instrument list
+  quote: "USDT"                # quote currency universe
+  min_quote_volume_24h: 50000  # liquidity floor — pairs below this are skipped silently
+
+candles:
+  timeframe: "1h"
+  count: 168                  # ~7 days of hourly candles
+  refresh_minutes: 5          # how often to refresh candles for liquid pairs
+
+detection:
+  support_band_pct: 1.2       # flat-support touch band half-width (%)
+  min_support_touches: 4
+  support_violation_pct: 3.0   # a low this far below band mid invalidates the floor
+  min_swing_points: 3          # swing highs/lows needed per trendline
+  trendline_min_r2: 0.70
+  coil_max_ratio: 0.60         # line-to-support distance vs triangle height
+  breakout_confirm: "close"    # breakout confirmed on candle close beyond line
+
+alerts:
+  # exits are computed as measured moves; abort = close beyond invalidation
+  flash_retain_minutes: 30     # how long breakout/ABORT banners stay pinned
