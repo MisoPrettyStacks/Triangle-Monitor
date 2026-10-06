@@ -1,0 +1,14 @@
+# Jurisdiction filter — California, United States
+# The Crypto.com public instrument API returns the GLOBAL list; it does not
+# expose per-token availability per US state. Only New York is documented as a
+# fully restricted state. Per-token California eligibility must be verified in
+# the Crypto.com App on a California account.
+#
+# HOW TO USE: if you find a token is not tradeable on your California account,
+# add its BASE symbol (e.g. STX) to the blocked list below and restart the app.
+# The monitor will drop it from the universe immediately.
+
+jurisdiction: "California, United States"
+blocked: []
+# Example:
+# blocked: ["STX", "XYZ"]
